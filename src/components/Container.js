@@ -4,14 +4,15 @@ function Container({
   header,
   children,
   textPosition = "", // possible values: left, right, center
-  direction = "horizontal", // possible values: vertical, horizontal
-  contentPosition = "center", // possible values: left, right, center
+  direction = "", // possible values: vertical, horizontal
+  contentPosition = "", // possible values: left, right, center
 }) {
   return (
     <div className={`container ${textPosition}`}>
       {header ? <h2>{header}</h2> : null}
 
-      <div className={`container-children ${direction} ${contentPosition}`}>
+      <div>
+        {contentPosition}
         {children}
       </div>
     </div>
